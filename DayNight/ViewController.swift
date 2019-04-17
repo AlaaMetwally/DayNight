@@ -10,11 +10,37 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var appPreference: UILabel!
+    @IBOutlet weak var appSwitch: UISwitch!
+    @IBOutlet weak var midNightTheme: UILabel!
+    @IBOutlet weak var image: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        if UserDefaults.standard.bool(forKey: "midNightThemeOn"){
+            switchToMidnight()
+        }else{
+            switchToDaytime()
+        }
+    }
+    
+    @IBAction func switchFlipped(sender: Any) {
+        if appSwitch.isOn{
+            switchToMidnight()
+            UserDefaults.standard.set(true, forKey: "midNightThemeOn")
+        }else{
+            switchToDaytime()
+            UserDefaults.standard.set(false, forKey: "midNightThemeOn")
+        }
     }
 
-
+    func switchToDaytime(){
+        self.image.image = UIImage(named: "sun")
+        appSwitch.isOn = false
+    }
+    func switchToMidnight(){
+        self.image.image = UIImage(named: "moon")
+        appSwitch.isOn = true
+    }
 }
 

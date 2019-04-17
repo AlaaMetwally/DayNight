@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,63 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DayNight" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oeU-8O-Rpp">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="663.5"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My App's Preferences Page" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EZn-2G-HQO">
+                                <rect key="frame" x="67" y="199" width="241" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dGM-rU-0ur">
+                                <rect key="frame" x="237" y="294" width="51" height="31"/>
+                                <connections>
+                                    <action selector="switchFlippedWithSender:" destination="BYZ-38-t0r" eventType="valueChanged" id="WnI-5S-0IF"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MidNight Theme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9zy-0M-bim">
+                                <rect key="frame" x="93" y="299" width="146" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="EZn-2G-HQO" firstAttribute="top" secondItem="oeU-8O-Rpp" secondAttribute="bottom" constant="-464.5" id="68n-LJ-lyl"/>
+                            <constraint firstItem="9zy-0M-bim" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="93" id="ELw-IS-np2"/>
+                            <constraint firstItem="EZn-2G-HQO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="FPF-k3-gin"/>
+                            <constraint firstItem="oeU-8O-Rpp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="G7G-jZ-Qjx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dGM-rU-0ur" secondAttribute="bottom" constant="342" id="M0o-3c-uLp"/>
+                            <constraint firstItem="dGM-rU-0ur" firstAttribute="leading" secondItem="9zy-0M-bim" secondAttribute="trailing" constant="-2" id="UDt-8h-FFT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9zy-0M-bim" secondAttribute="bottom" constant="347" id="aIr-UL-lBg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oeU-8O-Rpp" secondAttribute="trailing" id="cK7-uy-cwd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9zy-0M-bim" secondAttribute="trailing" constant="136" id="dnA-m8-tz9"/>
+                            <constraint firstItem="oeU-8O-Rpp" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="fDF-Nt-cIb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="EZn-2G-HQO" secondAttribute="bottom" constant="444" id="h4e-85-AQB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dGM-rU-0ur" secondAttribute="trailing" constant="89" id="iMQ-Q6-ChE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EZn-2G-HQO" secondAttribute="trailing" constant="67" id="wkg-io-wCt"/>
+                            <constraint firstItem="9zy-0M-bim" firstAttribute="top" secondItem="EZn-2G-HQO" secondAttribute="bottom" constant="76" id="zTd-ve-hXP"/>
+                            <constraint firstItem="dGM-rU-0ur" firstAttribute="top" secondItem="EZn-2G-HQO" secondAttribute="bottom" constant="71" id="zcA-6a-sEh"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="appPreference" destination="EZn-2G-HQO" id="aOD-Kt-OgD"/>
+                        <outlet property="appSwitch" destination="dGM-rU-0ur" id="ziB-0W-Cpm"/>
+                        <outlet property="image" destination="oeU-8O-Rpp" id="QHq-Iw-NxW"/>
+                        <outlet property="midNightTheme" destination="9zy-0M-bim" id="29a-t4-o6W"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
         </scene>
     </scenes>
 </document>
